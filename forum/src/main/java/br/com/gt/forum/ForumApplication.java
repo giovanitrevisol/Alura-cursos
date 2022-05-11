@@ -10,4 +10,8 @@ public class  ForumApplication {
 		SpringApplication.run(ForumApplication.class, args);
 	}
 
+	//URL H2
+	//http://localhost:8080/h2-console/
+	//JDBC URL H2
+	//jdbc:h2:mem:alura-forum
 }

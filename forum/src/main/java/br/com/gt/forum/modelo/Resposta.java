@@ -1,13 +1,21 @@
 package br.com.gt.forum.modelo;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class Resposta {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensagem;
+	@ManyToOne
+	@JoinColumn(name = "topico_id")
 	private Topico topico;
 	private LocalDateTime dataCriacao = LocalDateTime.now();
+	@ManyToOne
+	@JoinColumn(name = "autor_id")
 	private Usuario autor;
 	private Boolean solucao = false;
 
