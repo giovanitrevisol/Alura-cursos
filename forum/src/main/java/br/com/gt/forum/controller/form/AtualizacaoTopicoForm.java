@@ -3,9 +3,10 @@ package br.com.gt.forum.controller.form;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Length;
+
 import br.com.gt.forum.modelo.Topico;
 import br.com.gt.forum.repository.TopicoRepository;
-import org.hibernate.validator.constraints.Length;
 
 public class AtualizacaoTopicoForm {
 	
@@ -15,16 +16,8 @@ public class AtualizacaoTopicoForm {
 	@NotNull @NotEmpty @Length(min = 10)
 	private String mensagem;
 
-	public String getTitulo() {
-		return titulo;
-	}
-
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
-	}
-
-	public String getMensagem() {
-		return mensagem;
 	}
 
 	public void setMensagem(String mensagem) {
@@ -32,7 +25,7 @@ public class AtualizacaoTopicoForm {
 	}
 
 	public Topico atualizar(Long id, TopicoRepository topicoRepository) {
-		Topico topico = topicoRepository.getById(id);
+		Topico topico = topicoRepository.getOne(id);
 		
 		topico.setTitulo(this.titulo);
 		topico.setMensagem(this.mensagem);

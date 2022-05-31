@@ -1,12 +1,10 @@
 package br.com.gt.forum.controller.dto;
 
-import br.com.gt.forum.modelo.Topico;
+import java.time.LocalDateTime;
+
 import org.springframework.data.domain.Page;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
+import br.com.gt.forum.modelo.Topico;
 
 public class TopicoDto {
 
