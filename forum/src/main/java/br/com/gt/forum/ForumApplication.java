@@ -18,3 +18,9 @@ public class ForumApplication {
 	}
 
 }
+
+//para ver o admin
+//http://localhost:8081/
+
+//swagger
+//
